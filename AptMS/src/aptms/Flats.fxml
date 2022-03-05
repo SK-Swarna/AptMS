@@ -18,18 +18,18 @@
       <Label alignment="CENTER" layoutX="655.0" layoutY="70.0" prefHeight="26.0" prefWidth="95.0" text="filter" />
       <AnchorPane layoutX="640.0" layoutY="103.0" prefHeight="137.0" prefWidth="125.0">
          <children>
-            <CheckBox layoutX="11.0" layoutY="39.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All" />
+            <CheckBox fx:id="allFlats_chkbox" layoutX="11.0" layoutY="39.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All" />
             <Label layoutX="11.0" layoutY="7.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
-            <CheckBox layoutX="11.0" layoutY="63.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Occupied" />
-            <CheckBox layoutX="11.0" layoutY="92.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Vacant" />
+            <CheckBox fx:id="occFlats_chkbox" layoutX="11.0" layoutY="63.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Occupied" />
+            <CheckBox fx:id="vacantFlats_chkbox" layoutX="11.0" layoutY="92.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Vacant" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="640.0" layoutY="216.0" prefHeight="137.0" prefWidth="125.0">
          <children>
-            <CheckBox layoutX="11.0" layoutY="39.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All" />
+            <CheckBox fx:id="allPayTypes_chkbox" layoutX="11.0" layoutY="39.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All" />
             <Label layoutX="11.0" layoutY="7.0" prefHeight="26.0" prefWidth="95.0" text="Payment" />
-            <CheckBox layoutX="11.0" layoutY="63.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Due" />
-            <CheckBox layoutX="11.0" layoutY="92.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All Paid" />
+            <CheckBox fx:id="duePay_chkbox" layoutX="11.0" layoutY="63.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Due" />
+            <CheckBox fx:id="allpaid_chkbox" layoutX="11.0" layoutY="92.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All Paid" />
          </children>
       </AnchorPane>
       <Button layoutX="651.0" layoutY="359.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Filter Result" />
