@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="453.0" prefWidth="858.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="aptms.RegisteredPeopleController">
+    <stylesheets>
+        <URL value="@registeredpeople.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="372.0" layoutY="41.0" prefHeight="47.0" prefWidth="134.0" text="Registered People" />
+      <TableView fx:id="registeredPeople_tv" layoutX="104.0" layoutY="127.0" prefHeight="200.0" prefWidth="385.0" />
+      <Button layoutX="392.0" layoutY="338.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="97.0" text="Details" />
+      <Label layoutX="561.0" layoutY="65.0" prefHeight="17.0" prefWidth="97.0" text="Filter" />
+      <MenuButton fx:id="searchBy_menu" layoutX="670.0" layoutY="139.0" mnemonicParsing="false" text="Search by">
+        <items>
+          <MenuItem fx:id="searchByName_mi" mnemonicParsing="false" text="Name" />
+          <MenuItem fx:id="searchByPhone_mi" mnemonicParsing="false" text="Phone" />
+            <MenuItem fx:id="searchByResID_mi" mnemonicParsing="false" text="ResID" />
+        </items>
+      </MenuButton>
+      <TextField layoutX="506.0" layoutY="139.0" />
+      <Button layoutX="509.0" layoutY="196.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="252.0" text="search" />
+   </children>
+</AnchorPane>
