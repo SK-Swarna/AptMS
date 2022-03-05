@@ -38,6 +38,8 @@ public class HomeController implements Initializable {
     private Button flats_btn;
     @FXML
     private AnchorPane loadPage_anchorpane;
+    @FXML
+    private Button registeredPpl_btn;
 
     /**
      * Initializes the controller class.
@@ -85,6 +87,13 @@ public class HomeController implements Initializable {
         AnchorPane flatsPage = FXMLLoader.load(getClass().getResource("Flats.fxml"));
         loadPage_anchorpane.getChildren().clear();
         loadPage_anchorpane.getChildren().addAll(flatsPage);
+    }
+
+    @FXML
+    private void onClickRegisteredPpl_btn(ActionEvent event) throws IOException {
+        AnchorPane regedPpl = FXMLLoader.load(getClass().getResource("RegisteredPeople.fxml"));
+        loadPage_anchorpane.getChildren().clear();
+        loadPage_anchorpane.getChildren().addAll(regedPpl);
     }
 
 }
