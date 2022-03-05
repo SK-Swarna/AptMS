@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="453.0" prefWidth="858.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="aptms.FlatsController">
+    <stylesheets>
+        <URL value="@flats.css" />
+    </stylesheets>
+   <children>
+      <TableView layoutX="175.0" layoutY="116.0" prefHeight="200.0" prefWidth="440.0" />
+      <Label alignment="CENTER" layoutX="327.0" layoutY="53.0" prefHeight="50.0" prefWidth="155.0" text="Flats" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="655.0" layoutY="70.0" prefHeight="26.0" prefWidth="95.0" text="filter" />
+      <AnchorPane layoutX="640.0" layoutY="103.0" prefHeight="137.0" prefWidth="125.0">
+         <children>
+            <CheckBox layoutX="11.0" layoutY="39.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All" />
+            <Label layoutX="11.0" layoutY="7.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <CheckBox layoutX="11.0" layoutY="63.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Occupied" />
+            <CheckBox layoutX="11.0" layoutY="92.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Vacant" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="640.0" layoutY="216.0" prefHeight="137.0" prefWidth="125.0">
+         <children>
+            <CheckBox layoutX="11.0" layoutY="39.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All" />
+            <Label layoutX="11.0" layoutY="7.0" prefHeight="26.0" prefWidth="95.0" text="Payment" />
+            <CheckBox layoutX="11.0" layoutY="63.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Due" />
+            <CheckBox layoutX="11.0" layoutY="92.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All Paid" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="651.0" layoutY="359.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Filter Result" />
+      <AnchorPane layoutX="162.0" layoutY="341.0" prefHeight="62.0" prefWidth="282.0">
+         <children>
+            <TextField alignment="CENTER" layoutX="14.0" layoutY="19.0" promptText="Flat ID" />
+            <Button layoutX="185.0" layoutY="19.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Search" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
