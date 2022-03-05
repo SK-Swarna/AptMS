@@ -8,9 +8,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -29,6 +32,18 @@ public class RegisteredPeopleController implements Initializable {
     private MenuItem searchByPhone_mi;
     @FXML
     private MenuItem searchByResID_mi;
+    @FXML
+    private TextField searchBy_tf;
+    @FXML
+    private Button search_btn;
+    @FXML
+    private CheckBox currRes_chkbox;
+    @FXML
+    private CheckBox formerRes_chkbox;
+    @FXML
+    private CheckBox allRes_chkbox;
+    @FXML
+    private Button filter_btn;
 
     /**
      * Initializes the controller class.
@@ -36,6 +51,7 @@ public class RegisteredPeopleController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+//        allRes_chkbox.isSelected()
     }    
     
 }
