@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
@@ -23,76 +24,83 @@
       <Pane layoutX="81.0" layoutY="110.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="49.0" text="Flat ID" />
-            <Label fx:id="flatID_label" layoutX="71.0" layoutY="12.0" prefHeight="26.0" prefWidth="117.0" text="Flat ID" />
+            <Label fx:id="flatID_label" layoutX="71.0" layoutY="12.0" prefHeight="26.0" prefWidth="117.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="81.0" layoutY="153.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="Vacancy status" />
-            <Label fx:id="vacancyStatus_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="vacancyStatus_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="81.0" layoutY="202.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="87.0" text="Monthly Rent" />
-            <Label fx:id="rent_label" layoutX="100.0" layoutY="12.0" prefHeight="26.0" prefWidth="87.0" text="Flat ID" />
+            <Label fx:id="rent_label" layoutX="100.0" layoutY="12.0" prefHeight="26.0" prefWidth="87.0" text="..." />
          </children>
       </Pane>
       <Label layoutX="81.0" layoutY="349.0" prefHeight="17.0" prefWidth="111.0" text="edit properties" />
-      <MenuButton layoutX="81.0" layoutY="391.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="136.0" text="MenuButton">
+      <MenuButton fx:id="edit_menubtn" layoutX="81.0" layoutY="391.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="136.0" text="Select Property">
         <items>
-          <MenuItem mnemonicParsing="false" text="Monthly Rent" />
-          <MenuItem mnemonicParsing="false" text="Vacancy Status" />
+          <MenuItem mnemonicParsing="false" onAction="#onClickMonthyRent_mi" text="Monthly Rent" />
+          <MenuItem mnemonicParsing="false" onAction="#onClickVacancySt_mi" text="Vacancy Status" />
         </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuButton>
-      <TextField fx:id="editProperties_tf" layoutX="269.0" layoutY="391.0" />
-      <Button fx:id="update_btn" layoutX="514.0" layoutY="391.0" mnemonicParsing="false" onAction="#onClickUpdate_btn" prefHeight="25.0" prefWidth="136.0" text="Update" />
+      <TextField fx:id="editProperties_tf" layoutX="269.0" layoutY="391.0" promptText="Value" />
+      <Button fx:id="update_btn" layoutX="519.0" layoutY="391.0" mnemonicParsing="false" onAction="#onClickUpdate_btn" prefHeight="25.0" prefWidth="136.0" text="Update">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
       <Pane layoutX="637.0" layoutY="110.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="Gas" />
-            <Label fx:id="gas_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="gas_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="637.0" layoutY="153.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="Electricity" />
-            <Label fx:id="electricity_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="electricity_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="637.0" layoutY="202.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="Lift" />
-            <Label fx:id="lift_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="lift_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="637.0" layoutY="252.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="Generator" />
-            <Label fx:id="generator_tf" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="generator_tf" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="329.0" layoutY="165.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="sft" />
-            <Label fx:id="sft_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="sft_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="329.0" layoutY="214.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="bed" />
-            <Label fx:id="bed_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="bed_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="328.0" layoutY="115.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutX="-1.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="bath" />
-            <Label fx:id="bath_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="bath_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="329.0" layoutY="252.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="level" />
-            <Label fx:id="level_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="vacancy" />
+            <Label fx:id="level_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="120.0" layoutY="302.0" prefHeight="44.0" prefWidth="695.0">

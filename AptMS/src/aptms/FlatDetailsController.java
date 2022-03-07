@@ -5,6 +5,7 @@
 package aptms;
 
 import aptms.utils.Bundle;
+import aptms.utils.DBConnect;
 import aptms.utils.TableLoader;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -54,7 +55,10 @@ public class FlatDetailsController implements Initializable {
     private Label level_label;
     @FXML
     private Label address_label;
-
+    @FXML
+    private MenuButton edit_menubtn;
+    String qry;
+    boolean num = false;
     /**
      * Initializes the controller class.
      */
@@ -68,7 +72,34 @@ public class FlatDetailsController implements Initializable {
 
     @FXML
     private void onClickUpdate_btn(ActionEvent event) {
-        
+       if(num) qry += editProperties_tf.getText() + "";
+       else qry += editProperties_tf.getText() + "'";
+       
+       qry += " where FlatID = " + Bundle.UID;
+       
+        System.out.println("bug::::::::::::::::::" + qry);
+       try {
+           DBConnect dbcon = new DBConnect();
+           dbcon.connectToDB();
+           dbcon.insertDataToDB(qry);
+       }
+       catch(Exception e) {
+           System.out.println("uh - oh");
+       }
+    }
+
+    @FXML
+    private void onClickMonthyRent_mi(ActionEvent event) {
+        edit_menubtn.setText("Monthly Rent ");
+        qry = "update Flats Set MonthlyRent=";
+        num = true;
+    }
+
+    @FXML
+    private void onClickVacancySt_mi(ActionEvent event) {
+        edit_menubtn.setText("Vacancy Status ");
+        qry = "update Flats Set vacancy_st = '";
+        num = false;
     }
     
 }
