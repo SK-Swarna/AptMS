@@ -39,6 +39,6 @@
             <Button layoutX="185.0" layoutY="19.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Search" />
          </children>
       </AnchorPane>
-      <Button fx:id="gotoDetails_btn" layoutX="462.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" text="goto  Details" />
+      <Button fx:id="gotoDetails_btn" layoutX="462.0" layoutY="360.0" mnemonicParsing="false" onAction="#onClickGotoDetails_btn" prefHeight="25.0" prefWidth="155.0" text="goto  Details" />
    </children>
 </AnchorPane>
