@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aptms.FlatDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="453.0" prefWidth="858.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="aptms.FlatDetailsController">
     <stylesheets>
-        <URL value="@flatdetails.css"/>
+        <URL value="@flatdetails.css" />
     </stylesheets>
+   <children>
+      <Label alignment="CENTER" layoutX="343.0" layoutY="28.0" prefHeight="44.0" prefWidth="158.0" text="Flat details" textFill="#181a61">
+         <font>
+            <Font name="Leelawadee" size="25.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
