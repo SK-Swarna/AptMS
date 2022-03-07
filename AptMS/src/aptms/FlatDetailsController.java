@@ -4,12 +4,15 @@
  */
 package aptms;
 
+import aptms.utils.Bundle;
+import aptms.utils.TableLoader;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
@@ -21,58 +24,36 @@ import javafx.scene.control.TextField;
  */
 public class FlatDetailsController implements Initializable {
 
+
     @FXML
-    private MenuButton vacancy_menubtn;
+    private Label flatID_label;
+
     @FXML
-    private TextField rent_tf;
+    private Label vacancyStatus_label;
     @FXML
-    private Button Save;
+    private Label rent_label;
     @FXML
-    private MenuButton gas_menubtn;
+    private TextField editProperties_tf;
     @FXML
-    private MenuItem gasYes_mi;
+    private Button update_btn;
     @FXML
-    private MenuItem gasNo_mi;
+    private Label gas_label;
     @FXML
-    private MenuButton electricity_menubtn;
+    private Label electricity_label;
     @FXML
-    private MenuItem elecYes_mi;
+    private Label lift_label;
     @FXML
-    private MenuItem elecNo_mi;
+    private Label generator_tf;
     @FXML
-    private MenuButton lift_menubtn;
+    private Label sft_label;
     @FXML
-    private MenuItem liftYes_mi;
+    private Label bed_label;
     @FXML
-    private MenuItem liftNo_mi;
+    private Label bath_label;
     @FXML
-    private MenuButton generator_menubtn;
+    private Label level_label;
     @FXML
-    private MenuItem genYes_mi;
-    @FXML
-    private MenuItem genNo_mi;
-    @FXML
-    private TextField area_tf;
-    @FXML
-    private TextField bed_tf;
-    @FXML
-    private TextField bath_tf;
-    @FXML
-    private TextField level_tf;
-    @FXML
-    private TextField flatNo_tf;
-    @FXML
-    private TextField houseNo_tf;
-    @FXML
-    private TextField road_tf;
-    @FXML
-    private TextField block_tf;
-    @FXML
-    private TextField thana_tf;
-    @FXML
-    private TextField zilla_tf;
-    @FXML
-    private TextField division_tf;
+    private Label address_label;
 
     /**
      * Initializes the controller class.
@@ -80,10 +61,14 @@ public class FlatDetailsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        flatID_label.setText(Bundle.UID);
+        System.out.println(Bundle.UID);
+        
     }    
 
     @FXML
     private void onClickUpdate_btn(ActionEvent event) {
+        
     }
     
 }
