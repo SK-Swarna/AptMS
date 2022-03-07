@@ -4,6 +4,7 @@
  */
 package aptms;
 
+import aptms.utils.DBConnect;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -27,8 +28,6 @@ public class AddNewFlatController implements Initializable {
     private MenuButton vacancy_menubtn;
     @FXML
     private TextField rent_tf;
-    @FXML
-    private Button Save;
     @FXML
     private MenuButton gas_menubtn;
     @FXML
@@ -75,6 +74,19 @@ public class AddNewFlatController implements Initializable {
     private TextField zilla_tf;
     @FXML
     private TextField division_tf;
+    @FXML
+    private Button save_btn;
+    @FXML
+    private MenuItem vacancy_vacant_mi;
+    @FXML
+    private MenuItem vacancy_occ_mi;
+    String vacancySt,
+            gas,
+            elec,
+            gen,
+            lift;
+    @FXML
+    private TextField balcony_tf;
 
     /**
      * Initializes the controller class.
@@ -82,11 +94,103 @@ public class AddNewFlatController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-    }    
+
+    }
 
     @FXML
-    private void onClickUpdate_btn(ActionEvent event) {
+    private void onClickVacancy_vacant_mi(ActionEvent event) {
+        this.vacancySt = "vacant";
     }
-    
+
+    @FXML
+    private void onClickVacancy_occ_mi(ActionEvent event) {
+        this.vacancySt = "occupied";
+    }
+
+    @FXML
+    private void onClickGasYes_mi(ActionEvent event) {
+        this.gas = "yes";
+    }
+
+    @FXML
+    private void onClickGasNo_mi(ActionEvent event) {
+        this.gas = "no";
+    }
+
+    @FXML
+    private void onClickElecYes_mi(ActionEvent event) {
+        this.elec = "yes";
+    }
+
+    @FXML
+    private void onClickElecNo_mi(ActionEvent event) {
+        this.elec = "no";
+    }
+
+    @FXML
+    private void onClickLiftYes_mi(ActionEvent event) {
+        this.lift = "yes";
+    }
+
+    @FXML
+    private void onClickLiftNo_mi(ActionEvent event) {
+        this.lift = "no";
+    }
+
+    @FXML
+    private void onClickGenYes_mi(ActionEvent event) {
+        this.gen = "yes";
+    }
+
+    @FXML
+    private void onClickGenNo_mi(ActionEvent event) {
+        this.gen = "no";
+    }
+
+    @FXML
+    private void onClickSave_btn(ActionEvent event) {
+        System.out.println("save button pressed");
+        try {
+            DBConnect dbcon = new DBConnect();
+            dbcon.connectToDB();
+            
+            String query_Flats = "insert into Flats (vacancy_st, MonthlyRent)";
+            query_Flats += " values('" + this.vacancySt + "', " + rent_tf.getText() + ")";
+            
+            System.out.println("add new flat ::" + query_Flats);
+            dbcon.insertDataToDB(query_Flats);
+            
+            
+            String query_FullAddress = "insert into FullAddress (FlatNo, HouseNo, Road, Block, Thana, Zilla, Division) ";
+            query_FullAddress += "values ('" + flatNo_tf.getText() + "', '" + houseNo_tf.getText() + "', '";
+            query_FullAddress += road_tf.getText() + "', '" + block_tf.getText() + "', '" + thana_tf.getText() + "', '";
+            query_FullAddress += zilla_tf.getText() + "', '" + division_tf.getText() + "')";
+            
+            System.out.println("query full address: " + query_FullAddress);
+            
+            dbcon.insertDataToDB(query_FullAddress);
+            
+            
+            String query_flatServices = "insert into FlatServices(Gas, Electricity, lift, Generator) ";
+            query_flatServices += "values ('" + this.gas + "', '" + this.elec + "', '" + this.lift + "', '" + this.gen + "')";
+            
+            System.out.println("query flatServices:: " + query_flatServices);
+            
+            dbcon.insertDataToDB(query_flatServices);
+            
+            String query_flatDetails = "insert into FlatDetails (Bed, Area, Bath, Balcony) ";
+            query_flatDetails += "values (" + bed_tf.getText() + ", " + area_tf.getText() + ", " + bath_tf.getText() + ", " + balcony_tf.getText() + ")";
+            System.out.println("flat details qry: :" + query_flatDetails);
+            
+            dbcon.insertDataToDB(query_flatDetails);
+            
+            
+            
+            
+            
+        } catch (Exception e) {
+            System.out.println("uh oh, notun flat kinso?");
+        }
+    }
+
 }
