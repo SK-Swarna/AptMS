@@ -8,12 +8,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="453.0" prefWidth="858.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="aptms.FlatsController">
+<AnchorPane id="AnchorPane" prefHeight="453.0" prefWidth="858.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aptms.FlatsController">
     <stylesheets>
         <URL value="@flats.css" />
     </stylesheets>
    <children>
-      <TableView layoutX="175.0" layoutY="116.0" prefHeight="200.0" prefWidth="440.0" />
+      <TableView fx:id="flats_tv" layoutX="175.0" layoutY="116.0" prefHeight="200.0" prefWidth="440.0" />
       <Label alignment="CENTER" layoutX="327.0" layoutY="53.0" prefHeight="50.0" prefWidth="155.0" text="Flats" textAlignment="CENTER" />
       <Label alignment="CENTER" layoutX="655.0" layoutY="70.0" prefHeight="26.0" prefWidth="95.0" text="filter" />
       <AnchorPane layoutX="640.0" layoutY="103.0" prefHeight="137.0" prefWidth="125.0">
