@@ -60,6 +60,7 @@ public class RegisterNewController implements Initializable {
         DBConnect dbcon = new DBConnect();
         try {
             dbcon.connectToDB();
+            System.out.println("con success!");
             
             String name = name_tf.getText(),
                     email = email_tf.getText(),
