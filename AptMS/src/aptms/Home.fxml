@@ -28,6 +28,11 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <Button fx:id="addNewFlat_btn" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onAction="#onClickAddNewFlat_btn" prefHeight="35.0" prefWidth="170.0" text="Add New Flat">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="loadPage_anchorpane" layoutX="297.0" layoutY="66.0" prefHeight="453.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

@@ -40,6 +40,8 @@ public class HomeController implements Initializable {
     private AnchorPane loadPage_anchorpane;
     @FXML
     private Button registeredPpl_btn;
+    @FXML
+    private Button addNewFlat_btn;
 
     /**
      * Initializes the controller class.
@@ -94,6 +96,21 @@ public class HomeController implements Initializable {
         AnchorPane regedPpl = FXMLLoader.load(getClass().getResource("RegisteredPeople.fxml"));
         loadPage_anchorpane.getChildren().clear();
         loadPage_anchorpane.getChildren().addAll(regedPpl);
+    }
+
+    @FXML
+    private void onClickAddNewFlat_btn(ActionEvent event) throws IOException {
+        
+        try {
+            AnchorPane newFlat = FXMLLoader.load(getClass().getResource("AddNewFlat.fxml"));
+            loadPage_anchorpane.getChildren().clear();
+            loadPage_anchorpane.getChildren().addAll(newFlat);
+        }
+        catch(Exception e) {
+            System.out.println("-----------------uh-oh : " + e);
+        }
+        
+        
     }
 
 }
