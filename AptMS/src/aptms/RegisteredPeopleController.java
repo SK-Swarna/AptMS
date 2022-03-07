@@ -4,8 +4,12 @@
  */
 package aptms;
 
+import aptms.utils.TableLoader;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -45,13 +49,22 @@ public class RegisteredPeopleController implements Initializable {
     @FXML
     private Button filter_btn;
 
+    TableLoader tableLoader = new TableLoader();
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            // TODO
 //        allRes_chkbox.isSelected()
-    }    
-    
+            tableLoader.loadTable("select * from RegPeople", registeredPeople_tv);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RegisteredPeopleController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(RegisteredPeopleController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
