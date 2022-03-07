@@ -35,6 +35,9 @@
                 <MenuItem fx:id="vacancy_vacant_mi" mnemonicParsing="false" onAction="#onClickVacancy_vacant_mi" text="Vacant" />
                 <MenuItem fx:id="vacancy_occ_mi" mnemonicParsing="false" onAction="#onClickVacancy_occ_mi" text="Occupied" />
               </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </MenuButton>
          </children>
       </Pane>
@@ -56,6 +59,9 @@
                   <MenuItem fx:id="gasYes_mi" mnemonicParsing="false" onAction="#onClickGasYes_mi" text="Yes" />
                   <MenuItem fx:id="gasNo_mi" mnemonicParsing="false" onAction="#onClickGasNo_mi" text="No" />
                </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </MenuButton>
          </children>
       </Pane>
@@ -67,6 +73,9 @@
                   <MenuItem fx:id="elecYes_mi" mnemonicParsing="false" onAction="#onClickElecYes_mi" text="Yes" />
                   <MenuItem fx:id="elecNo_mi" mnemonicParsing="false" onAction="#onClickElecNo_mi" text="No" />
                </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </MenuButton>
          </children>
       </Pane>
@@ -78,6 +87,9 @@
                   <MenuItem fx:id="liftYes_mi" mnemonicParsing="false" onAction="#onClickLiftYes_mi" text="Yes" />
                   <MenuItem fx:id="liftNo_mi" mnemonicParsing="false" onAction="#onClickLiftNo_mi" text="NO" />
                </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </MenuButton>
          </children>
       </Pane>
@@ -89,6 +101,9 @@
                   <MenuItem fx:id="genYes_mi" mnemonicParsing="false" onAction="#onClickGenYes_mi" text="Yes" />
                   <MenuItem fx:id="genNo_mi" mnemonicParsing="false" onAction="#onClickGenNo_mi" text="No" />
                </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </MenuButton>
          </children>
       </Pane>

@@ -100,51 +100,61 @@ public class AddNewFlatController implements Initializable {
     @FXML
     private void onClickVacancy_vacant_mi(ActionEvent event) {
         this.vacancySt = "vacant";
+        vacancy_menubtn.setText("Vacant");
     }
 
     @FXML
     private void onClickVacancy_occ_mi(ActionEvent event) {
         this.vacancySt = "occupied";
+        vacancy_menubtn.setText("Occupied");
     }
 
     @FXML
     private void onClickGasYes_mi(ActionEvent event) {
         this.gas = "yes";
+        gas_menubtn.setText("Yes");
     }
 
     @FXML
     private void onClickGasNo_mi(ActionEvent event) {
         this.gas = "no";
+        gas_menubtn.setText("No");
     }
 
     @FXML
     private void onClickElecYes_mi(ActionEvent event) {
         this.elec = "yes";
+        electricity_menubtn.setText("Yes");
     }
 
     @FXML
     private void onClickElecNo_mi(ActionEvent event) {
         this.elec = "no";
+        electricity_menubtn.setText("No");
     }
 
     @FXML
     private void onClickLiftYes_mi(ActionEvent event) {
         this.lift = "yes";
+        lift_menubtn.setText("Yes");
     }
 
     @FXML
     private void onClickLiftNo_mi(ActionEvent event) {
         this.lift = "no";
+        lift_menubtn.setText("No");
     }
 
     @FXML
     private void onClickGenYes_mi(ActionEvent event) {
         this.gen = "yes";
+        generator_menubtn.setText("Yes");
     }
 
     @FXML
     private void onClickGenNo_mi(ActionEvent event) {
         this.gen = "no";
+        lift_menubtn.setText("No");
     }
 
     @FXML
