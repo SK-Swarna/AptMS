@@ -76,7 +76,7 @@
       <Pane layoutX="637.0" layoutY="252.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="Generator" />
-            <Label fx:id="generator_tf" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
+            <Label fx:id="generator_label" layoutX="99.0" layoutY="12.0" prefHeight="26.0" prefWidth="95.0" text="..." />
          </children>
       </Pane>
       <Pane layoutX="329.0" layoutY="165.0" prefHeight="50.0" prefWidth="200.0">
