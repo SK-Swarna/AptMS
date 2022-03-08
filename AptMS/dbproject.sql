@@ -31,7 +31,10 @@ FlatID int,
 Gas varchar(29),
 Electricity varchar(20),
 lift varchar(20),
-Generator varchar(20)
+Generator varchar(20),
+
+constraint service_FlatID_fk foreign key(FlatID) references Flats
+
 
 );
 insert into FlatServices(FlatID, Gas, Electricity, lift, Generator)
@@ -47,19 +50,24 @@ Road varchar(30),
 Block varchar(30),
 Thana varchar(30),
 Zilla varchar(30),
-Division varchar(30)
+Division varchar(30),
+
+constraint fullAdd_FlatID_fk foreign key(FlatID) references Flats
 );
 
 insert into FullAddress(FlatID, FlatNo, HouseNo, Road, Block, Thana, Zilla, Division)
 values();
 
-
+alter table FlatDetails
+add constraint flatDet_FlatID_fk foreign key(FlatID) references Flats;
 create table FlatDetails(
 FlatID int,
 Bed int,
 Area decimal(7, 2),
 Bath int,
-Balcony int
+Balcony int,
+
+constraint flatDet_FlatID_fk foreign key(FlatID) references Flats
 );
 
 insert into FlatDetails(FlatID, Bed, Area, Bath, Balcony)
@@ -105,3 +113,7 @@ constraint fk_flatID foreign key(FlatID) references Flats
 
 --closing agreements
 delete from CurrentRentals where FlatID = '';
+select * from FlatDetails
+
+--get The last identity value inserted into an identity column 
+select SCOPE_IDENTITY()
