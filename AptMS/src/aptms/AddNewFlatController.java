@@ -6,14 +6,18 @@ package aptms;
 
 import aptms.utils.DBConnect;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -22,8 +26,6 @@ import javafx.scene.control.TextField;
  */
 public class AddNewFlatController implements Initializable {
 
-    @FXML
-    private TextField flatID_tf;
     @FXML
     private MenuButton vacancy_menubtn;
     @FXML
@@ -160,7 +162,12 @@ public class AddNewFlatController implements Initializable {
     @FXML
     private void onClickSave_btn(ActionEvent event) {
         System.out.println("save button pressed");
+        boolean t1 = false,
+                t2 = false,
+                t3 = false,
+                t4 = false;
         try {
+            
             DBConnect dbcon = new DBConnect();
             dbcon.connectToDB();
             
@@ -168,38 +175,48 @@ public class AddNewFlatController implements Initializable {
             query_Flats += " values('" + this.vacancySt + "', " + rent_tf.getText() + ")";
             
             System.out.println("add new flat ::" + query_Flats);
-            dbcon.insertDataToDB(query_Flats);
+            t1 = dbcon.insertDataToDB(query_Flats);
             
+            //get FlatID
+            ResultSet lastID = (dbcon.queryToDB("select @@identity"));
+            lastID.next();
+            String FlatID = lastID.getString(1);
             
-            String query_FullAddress = "insert into FullAddress (FlatNo, HouseNo, Road, Block, Thana, Zilla, Division) ";
-            query_FullAddress += "values ('" + flatNo_tf.getText() + "', '" + houseNo_tf.getText() + "', '";
+            System.out.println("flatid new inserted: " + FlatID);
+            
+            String query_FullAddress = "insert into FullAddress (FlatID, FlatNo, HouseNo, Road, Block, Thana, Zilla, Division) ";
+            query_FullAddress += "values (" + FlatID + ", '" + flatNo_tf.getText() + "', '" + houseNo_tf.getText() + "', '";
             query_FullAddress += road_tf.getText() + "', '" + block_tf.getText() + "', '" + thana_tf.getText() + "', '";
             query_FullAddress += zilla_tf.getText() + "', '" + division_tf.getText() + "')";
             
             System.out.println("query full address: " + query_FullAddress);
             
-            dbcon.insertDataToDB(query_FullAddress);
+            t2 = dbcon.insertDataToDB(query_FullAddress);
             
             
-            String query_flatServices = "insert into FlatServices(Gas, Electricity, lift, Generator) ";
-            query_flatServices += "values ('" + this.gas + "', '" + this.elec + "', '" + this.lift + "', '" + this.gen + "')";
+            String query_flatServices = "insert into FlatServices(FlatID, Gas, Electricity, lift, Generator) ";
+            query_flatServices += "values (" + FlatID + ", '"  + this.gas + "', '" + this.elec + "', '" + this.lift + "', '" + this.gen + "')";
             
             System.out.println("query flatServices:: " + query_flatServices);
             
-            dbcon.insertDataToDB(query_flatServices);
+            t3 = dbcon.insertDataToDB(query_flatServices);
             
-            String query_flatDetails = "insert into FlatDetails (Bed, Area, Bath, Balcony) ";
-            query_flatDetails += "values (" + bed_tf.getText() + ", " + area_tf.getText() + ", " + bath_tf.getText() + ", " + balcony_tf.getText() + ")";
+            String query_flatDetails = "insert into FlatDetails (FlatID, Bed, Area, Bath, Balcony) ";
+            query_flatDetails += "values (" + FlatID + ", " + bed_tf.getText() + ", " + area_tf.getText() + ", " + bath_tf.getText() + ", " + balcony_tf.getText() + ")";
             System.out.println("flat details qry: :" + query_flatDetails);
             
-            dbcon.insertDataToDB(query_flatDetails);
+            t4 = dbcon.insertDataToDB(query_flatDetails);
             
-            
+            if(t1 && t2 && t3 && t4) {
+                //if all query success
+               //((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+                
+            }
             
             
             
         } catch (Exception e) {
-            System.out.println("uh oh, notun flat kinso?");
+            System.out.println("couldn't add new flat : " + e);
         }
     }
 
