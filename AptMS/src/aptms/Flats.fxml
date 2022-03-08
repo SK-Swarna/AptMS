@@ -14,7 +14,7 @@
         <URL value="@flats.css" />
     </stylesheets>
    <children>
-      <TableView fx:id="flats_tv" layoutX="175.0" layoutY="116.0" prefHeight="200.0" prefWidth="440.0" />
+      <TableView fx:id="flats_tv" layoutX="25.0" layoutY="116.0" prefHeight="200.0" prefWidth="590.0" />
       <Label alignment="CENTER" layoutX="327.0" layoutY="53.0" prefHeight="50.0" prefWidth="155.0" text="Flats" textAlignment="CENTER" />
       <Label alignment="CENTER" layoutX="655.0" layoutY="70.0" prefHeight="26.0" prefWidth="95.0" text="filter" />
       <AnchorPane layoutX="640.0" layoutY="103.0" prefHeight="137.0" prefWidth="125.0">
@@ -37,19 +37,21 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <AnchorPane layoutX="162.0" layoutY="341.0" prefHeight="62.0" prefWidth="282.0">
+      <AnchorPane layoutX="15.0" layoutY="341.0" prefHeight="62.0" prefWidth="187.0">
          <children>
-            <TextField fx:id="search_tf" alignment="CENTER" layoutX="14.0" layoutY="19.0" promptText="Flat ID" />
-            <Button fx:id="search_btn" layoutX="185.0" layoutY="19.0" mnemonicParsing="false" onAction="#onClickSearch_btn" prefHeight="25.0" prefWidth="85.0" text="Search">
+            <TextField fx:id="search_tf" alignment="CENTER" layoutX="14.0" layoutY="19.0" prefHeight="25.0" prefWidth="95.0" promptText="Flat ID" />
+            <Button fx:id="search_btn" layoutX="185.0" layoutY="19.0" mnemonicParsing="false" onAction="#onClickSearch_btn" prefHeight="25.0" prefWidth="73.0" text="Search" AnchorPane.rightAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
          </children>
       </AnchorPane>
-      <Button fx:id="gotoDetails_btn" layoutX="462.0" layoutY="360.0" mnemonicParsing="false" onAction="#onClickGotoDetails_btn" prefHeight="25.0" prefWidth="155.0" text="goto  Details">
+      <Button fx:id="gotoDetails_btn" layoutX="462.0" layoutY="360.0" mnemonicParsing="false" onAction="#onClickGotoDetails_btn" prefHeight="25.0" prefWidth="155.0" text="Goto  Details">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button fx:id="reload_btn" layoutX="355.0" layoutY="403.0" mnemonicParsing="false" onAction="#onClickReload_btn" prefHeight="35.0" prefWidth="400.0" text="Reload Table" />
+      <Button fx:id="delete_btn" layoutX="353.0" layoutY="360.0" mnemonicParsing="false" onAction="#onClickDelete_btn" prefHeight="26.0" prefWidth="104.0" text="Delete" />
    </children>
 </AnchorPane>

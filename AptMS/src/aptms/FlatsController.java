@@ -58,7 +58,11 @@ public class FlatsController implements Initializable {
     private Button search_btn;
     @FXML
     private TextField search_tf;
-    
+    @FXML
+    private Button reload_btn;
+    @FXML
+    private Button delete_btn;
+
     /**
      * Initializes the controller class.
      */
@@ -67,7 +71,7 @@ public class FlatsController implements Initializable {
         try {
             // TODO
 
-            tableLoader.loadTable("select * from Flats", flats_tv);
+            tableLoader.loadTable("select Flats.FlatID, FlatDetails.Bed, FlatDetails.Bath, FlatDetails.Balcony, FlatDetails.Area, Flats.MonthlyRent, Flats.vacancy_st from Flats join FlatDetails on Flats.FlatID = FlatDetails.FlatID", flats_tv);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FlatsController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -89,7 +93,7 @@ public class FlatsController implements Initializable {
         Bundle.UID = flatID;
 
         final Stage dialog = new Stage();
-        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.initModality(Modality.WINDOW_MODAL);
         dialog.initOwner((Stage) ((Node) event.getSource()).getScene().getWindow());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FlatDetails.fxml"));
 
@@ -143,14 +147,52 @@ public class FlatsController implements Initializable {
         try {
             DBConnect dbcon = new DBConnect();
             dbcon.connectToDB();
-            
-            
+
             tableLoader.loadTable(qry, flats_tv);
-            
+
             dbcon.queryToDB(qry);
         } catch (Exception e) {
             System.out.println("uh - oh");
         }
+    }
+
+    @FXML
+    private void onClickReload_btn(ActionEvent event) {
+        try {
+            //rebuild table
+            tableLoader.loadTable("select Flats.FlatID, FlatDetails.Bed, FlatDetails.Bath, FlatDetails.Balcony, FlatDetails.Area, Flats.MonthlyRent, Flats.vacancy_st from Flats join FlatDetails on Flats.FlatID = FlatDetails.FlatID", flats_tv);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FlatsController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(FlatsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void onClickDelete_btn(ActionEvent event) {
+        try {
+            //delete row where id = this
+            DBConnect dbcon = new DBConnect();
+            dbcon.connectToDB();
+
+            Object s = flats_tv.getSelectionModel().getSelectedItems().get(0);
+
+            System.out.println(s.toString().split(", ")[1].substring(1));
+
+            String flatID = s.toString().split(", ")[0].substring(1); //got the 1st column of selected row -> first col = course id
+            System.out.println("flat id : " + flatID);
+
+            dbcon.insertDataToDB("delete from Flats where FlatID = " + flatID);
+            dbcon.insertDataToDB("delete from FlatsDetails where FlatID = " + flatID);
+            dbcon.insertDataToDB("delete from FlatServices where FlatID = " + flatID);
+            dbcon.insertDataToDB("delete from FullAddress where FlatID = " + flatID);
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FlatsController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(FlatsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }
