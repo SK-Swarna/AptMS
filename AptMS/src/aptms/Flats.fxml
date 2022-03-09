@@ -25,7 +25,7 @@
             <CheckBox fx:id="vacantFlats_chkbox" layoutX="11.0" layoutY="92.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Vacant" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="640.0" layoutY="216.0" prefHeight="137.0" prefWidth="125.0">
+      <AnchorPane layoutX="640.0" layoutY="216.0" prefHeight="137.0" prefWidth="125.0" visible="false">
          <children>
             <CheckBox fx:id="allPayTypes_chkbox" layoutX="11.0" layoutY="39.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="All" />
             <Label layoutX="11.0" layoutY="7.0" prefHeight="26.0" prefWidth="95.0" text="Payment" />
