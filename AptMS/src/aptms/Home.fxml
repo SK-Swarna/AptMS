@@ -20,7 +20,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutX="15.0" layoutY="236.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="170.0" text="Billings">
+            <Button layoutX="15.0" layoutY="236.0" mnemonicParsing="false" onAction="#onClickBillngs_btn" prefHeight="35.0" prefWidth="170.0" text="Billings">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

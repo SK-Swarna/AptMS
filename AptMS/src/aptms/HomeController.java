@@ -56,7 +56,6 @@ public class HomeController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
 
     }
 
@@ -100,17 +99,22 @@ public class HomeController implements Initializable {
 
     @FXML
     private void onClickAddNewFlat_btn(ActionEvent event) throws IOException {
-        
+
         try {
             AnchorPane newFlat = FXMLLoader.load(getClass().getResource("AddNewFlat.fxml"));
             loadPage_anchorpane.getChildren().clear();
             loadPage_anchorpane.getChildren().addAll(newFlat);
+        } catch (Exception e) {
+            System.out.println("-----------------problem " + e);
         }
-        catch(Exception e) {
-            System.out.println("-----------------uh-oh : " + e);
-        }
-        
-        
+
+    }
+
+    @FXML
+    private void onClickBillngs_btn(ActionEvent event) throws IOException {
+        AnchorPane regedPpl = FXMLLoader.load(getClass().getResource("Billings.fxml"));
+        loadPage_anchorpane.getChildren().clear();
+        loadPage_anchorpane.getChildren().addAll(regedPpl);
     }
 
 }
