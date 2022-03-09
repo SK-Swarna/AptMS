@@ -73,11 +73,7 @@ constraint flatDet_FlatID_fk foreign key(FlatID) references Flats
 insert into FlatDetails(FlatID, Bed, Area, Bath, Balcony)
 values();
 drop table FullAddress
-create table Flats(
-FlatID int identity(1, 1) primary key,
-VacancyStatus varchar(30),
-MonthlyRent decimal(7, 2)
-);
+
 select * from Flats
 select * from FlatDetails
 select * from FlatServices
