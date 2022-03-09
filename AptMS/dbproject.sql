@@ -72,7 +72,7 @@ constraint flatDet_FlatID_fk foreign key(FlatID) references Flats
 
 insert into FlatDetails(FlatID, Bed, Area, Bath, Balcony)
 values();
-
+drop table FullAddress
 create table Flats(
 FlatID int identity(1, 1) primary key,
 VacancyStatus varchar(30),
@@ -110,10 +110,42 @@ FlatID int,
 constraint fk_resID foreign key(ResID) references RegPeople,
 constraint fk_flatID foreign key(FlatID) references Flats
 );
-
+select * from FullAddress
 --closing agreements
 delete from CurrentRentals where FlatID = '';
 select * from FlatDetails
 
 --get The last identity value inserted into an identity column 
 select SCOPE_IDENTITY()
+select @@IDENTITY
+select * from 
+Flats
+join FlatDetails 
+on Flats.FlatID = FlatDetails.FlatID;
+insert into CurrentRentals
+values(1, 7)
+select * from RegPeople where ResID in (select ResID from CurrentRentals);
+
+select * from RegPeople;
+
+select * from CurrentRentals;
+
+create table Bills(
+BillID int identity(1,1) primary key,
+FlatID int,
+ResID int,
+Amount decimal(7,2),
+Pay_st varchar(23),
+BillMonth varchar(23),
+
+
+constraint fid_fk foreign key(FlatID) references Flats,
+constraint resid_fk foreign key(ResID) references RegPeople );
+
+drop table Bills;
+select * from Flats
+insert into Flats
+values((select 'vacant'), (select 100.0));
+
+delete from Flats where FlatID=8
+insert into Bills values(7, (select ResID from CurrentRentals where FlatID = 7), (select MonthlyRent from Flats where FlatID = 7), 'due', 'june')
