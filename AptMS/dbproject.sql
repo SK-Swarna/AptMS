@@ -72,7 +72,7 @@ constraint flatDet_FlatID_fk foreign key(FlatID) references Flats
 
 insert into FlatDetails(FlatID, Bed, Area, Bath, Balcony)
 values();
-drop table FullAddress
+--drop table FullAddress
 
 select * from Flats
 select * from FlatDetails
